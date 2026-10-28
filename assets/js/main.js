@@ -15,7 +15,7 @@
 
   var PHONE = "+79119275337";
   var PHONE_PRETTY = "+7 (911) 927-53-37";
-  var WHATSAPP = "https://wa.me/79119275337";
+  var EMAIL = "sey3@yandex.ru";
 
   /* ---------- Year ---------- */
   $$("[data-year]").forEach(function (el) {
@@ -407,21 +407,22 @@
       lines.push("Страница: " + window.location.href);
 
       var message = lines.join("\n");
-      var waLink = WHATSAPP + "?text=" + encodeURIComponent(message);
+      var subject = "Заявка с сайта «Обивка кроватей»";
+      var mailLink = "mailto:" + EMAIL + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(message);
 
       if (wrap) {
         wrap.classList.add("is-sent");
         var success = $(".form-success", wrap);
         if (success) {
-          var waButton = $("[data-success-whatsapp]", success);
-          if (waButton) waButton.setAttribute("href", waLink);
+          var emailButton = $("[data-success-email]", success);
+          if (emailButton) emailButton.setAttribute("href", mailLink);
         }
       }
 
       var modalBody = form.closest(".modal__body");
       if (modalBody) modalBody.scrollTop = 0;
 
-      window.open(waLink, "_blank", "noopener,noreferrer");
+      window.location.href = mailLink;
     });
 
     $$("input, select, textarea", form).forEach(function (input) {
@@ -545,6 +546,44 @@
 
   /* ---------- Mobile bar body offset ---------- */
   if ($("#mobileBar")) document.body.classList.add("has-mobile-bar");
+
+  /* ---------- Cookie notice ---------- */
+  (function initCookieNotice() {
+    var cookieName = "obivka_cookie_consent";
+    if (document.cookie.split("; ").some(function (item) {
+      return item.indexOf(cookieName + "=") === 0;
+    })) return;
+
+    var prefix = window.location.pathname.indexOf("/articles/") !== -1 ? "../" : "";
+    var banner = document.createElement("div");
+    banner.className = "cookie-banner";
+    banner.setAttribute("role", "region");
+    banner.setAttribute("aria-label", "Уведомление о файлах cookie");
+
+    var text = document.createElement("div");
+    text.className = "cookie-banner__text";
+    text.innerHTML = 'Мы используем технические файлы cookie и обрабатываем данные, которые вы отправляете через форму заявки. Это нужно для работы сайта и связи с вами. Подробнее — в <a href="' + prefix + 'privacy.html#s12">политике конфиденциальности</a>.';
+
+    var actions = document.createElement("div");
+    actions.className = "cookie-banner__actions";
+
+    var accept = document.createElement("button");
+    accept.className = "cookie-banner__btn";
+    accept.type = "button";
+    accept.textContent = "Принять";
+    accept.addEventListener("click", function () {
+      document.cookie = cookieName + "=1; Path=/; Max-Age=31536000; SameSite=Lax";
+      banner.classList.add("is-hidden");
+      window.setTimeout(function () {
+        if (banner.parentNode) banner.parentNode.removeChild(banner);
+      }, 320);
+    });
+
+    actions.appendChild(accept);
+    banner.appendChild(text);
+    banner.appendChild(actions);
+    document.body.appendChild(banner);
+  })();
 
   /* ---------- External links safety ---------- */
   $$('a[target="_blank"]').forEach(function (link) {
