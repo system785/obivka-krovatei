@@ -2266,7 +2266,7 @@ em {
 .works__grid {
   display: grid;
   grid-template-columns: 1.24fr 0.76fr;
-  grid-template-rows: 315px 315px;
+  grid-auto-rows: 315px;
   gap: 16px;
 }
 
@@ -4198,7 +4198,7 @@ article[id] {
 
   .works__grid {
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 280px 280px;
+    grid-auto-rows: 280px;
   }
 
   .work--tall {
@@ -4534,7 +4534,7 @@ article[id] {
 
   .works__grid {
     grid-template-columns: 1fr;
-    grid-template-rows: none;
+    grid-auto-rows: auto;
   }
 
   .work {
