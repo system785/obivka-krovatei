@@ -2,31 +2,37 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://system785.github.io/obivka-krovatei/</loc>
-    <lastmod>2026-10-29</lastmod>
+    <lastmod>2026-11-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://system785.github.io/obivka-krovatei/articles.html</loc>
-    <lastmod>2026-10-29</lastmod>
+    <lastmod>2026-11-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://system785.github.io/obivka-krovatei/articles/peretyazhka-krovati-na-domu.html</loc>
-    <lastmod>2026-10-29</lastmod>
+    <lastmod>2026-11-11</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://system785.github.io/obivka-krovatei/articles/kak-vybrat-tkan-dlya-obivki.html</loc>
-    <lastmod>2026-10-29</lastmod>
+    <lastmod>2026-11-11</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://system785.github.io/obivka-krovatei/articles/test-martindejla.html</loc>
+    <lastmod>2026-11-11</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://system785.github.io/obivka-krovatei/articles/skolko-stoit-peretyazhka-krovati.html</loc>
-    <lastmod>2026-10-29</lastmod>
+    <lastmod>2026-11-11</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>

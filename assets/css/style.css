@@ -2241,6 +2241,18 @@ em {
   font-weight: 700;
 }
 
+.materials__cta p a {
+  color: var(--cream);
+  text-decoration: underline;
+  text-decoration-color: rgba(247, 241, 231, 0.45);
+  text-underline-offset: 3px;
+  transition: text-decoration-color 0.25s;
+}
+
+.materials__cta p a:hover {
+  text-decoration-color: currentColor;
+}
+
 .materials__cta .btn {
   flex: 0 0 auto;
 }
